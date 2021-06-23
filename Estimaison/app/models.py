@@ -4,10 +4,6 @@ from sqlalchemy import create_engine
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-engine = create_engine('mysql+pymysql://rafik:simplon@localhost/startups50')
-
-
 def graphique():
 
     #data = pd.read_sql_query('select * from startups50', engine)

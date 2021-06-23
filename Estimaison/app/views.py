@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 import matplotlib.pyplot as plt
 import seaborn as sns
 from app import models
+from joblib import load
 
 @app.route('/')
 def index():
@@ -29,7 +30,14 @@ def formulaire_predict():
 
 @app.route('/predict', methods = ['POST', 'GET'])
 def predict():
-    rd = request.form['rd']
-    marketing = request.form['marketing']
+
+    address = request.form['address']
+    income = request.form['income']
+    rooms = request.form['rooms']
+    bedrooms = request.form['bedrooms']
+
+    model = load('app/static/model.joblib')
+    price = "0"
+
     date = datetime.datetime.now().strftime("%x %X")
-    return render_template( 'predict.html', date=date, marketing=marketing, rd=rd)
+    return render_template( 'predict.html', date=date, address=address, rooms=rooms, income=income, bedrooms=bedrooms,  price=price)
