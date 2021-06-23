@@ -8,6 +8,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from app import models
 from joblib import load
+from geopy.geocoders import Nominatim
+from flask_googlemaps import get_address, get_coordinates
+from flask_googlemaps import GoogleMaps
+from flask_googlemaps import Map
+
 
 @app.route('/')
 def index():
@@ -36,8 +41,23 @@ def predict():
     rooms = request.form['rooms']
     bedrooms = request.form['bedrooms']
 
+    address = address.replace(" ","+")
+
+    location=get_coordinates("AIzaSyBZih3CFXxvRf_bGZ614lUa9cu5bqy6xkc",address.replace(" ","+"))
+
+    # model : ["ll", 'longitude', 'latitude', 'rooms_per_household', 'bedrooms_per_household', "median_income"]
+
     model = load('app/static/model.joblib')
-    price = "0"
+    price = model.predict([[location["lng"]*location["lat"], location["lng"], location["lat"], rooms, bedrooms, income]])[0]
 
     date = datetime.datetime.now().strftime("%x %X")
-    return render_template( 'predict.html', date=date, address=address, rooms=rooms, income=income, bedrooms=bedrooms,  price=price)
+    return render_template(
+        'predict.html',
+        date=date,
+        address=address,
+        rooms=rooms,
+        income=income,
+        bedrooms=bedrooms,
+        price=price,
+        longitude=location.longitude,
+        latitude=location.latitude)

@@ -3,6 +3,7 @@
 # Une application WGI est, pour faire simple, un ensemble de comportement et de méthode
 from flask import Flask
 from app.config import configuration
+from flask_googlemaps import GoogleMaps
 
 
 # Dans la variable app on va créer une instance d'application et on lui fournit le nom de notre module en cour 
@@ -10,6 +11,8 @@ from app.config import configuration
 # L'instance d'application est le registre central pour les éléments tel que les vues, les itinéraires d'URL, ou les configuration des modèle
 # En somme on initialise l'application Flask
 app = Flask( __name__ )
+
+GoogleMaps(app)
 
 # Prise en charge des requêtes
 from app import views
