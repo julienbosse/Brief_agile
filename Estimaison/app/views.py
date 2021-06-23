@@ -43,7 +43,7 @@ def predict():
 
     address = address.replace(" ","+")
 
-    location=get_coordinates("AIzaSyBZih3CFXxvRf_bGZ614lUa9cu5bqy6xkc",address.replace(" ","+"))
+    location=get_coordinates("AIzaSyBZih3CFXxvRf_bGZ614lUa9cu5bqy6xkc","Netaji Subhash Engineering College Kolkata")
 
     # model : ["ll", 'longitude', 'latitude', 'rooms_per_household', 'bedrooms_per_household', "median_income"]
 
