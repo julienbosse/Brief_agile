@@ -1,0 +1,81 @@
+{% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>Esti'Maison</h1>
+                    <h3>Notre solution IA : </h3>
+                    <hr class="intro-divider">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="wrapper_button">
+                    <div class="estimer-button">
+                        <a href="#"><button class="btn third">Estimez votre bien !</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="wrapper-form">
+                <h1 align="middle" style="color:darkorange;">Estimation</h1>
+                <div align="middle">
+
+                    Les dépenses en marketing sont : {{ addresse }} $ <br>
+
+                    Le profit estimé est de : {{ prediction }} $
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="wrapper-map">
+                <h1 align="middle" style="color:darkorange;">Votre quartier</h1>
+
+                <!--    place: displays a map pin at a particular place or address, such as a landmark, business, geographic feature, or town.
+                        view: returns a map with no markers or directions.
+                        directions: displays the path between two or more specified points on the map, as well as the distance and travel time.
+                        streetview: shows interactive panoramic views from designated locations.
+                        search: shows results for a search across the visible map region.
+                        -->
+                <iframe
+                      width="600"
+                      height="450"
+                      style="border:0"
+                      loading="lazy"
+                      allowfullscreen
+                      src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDstWgA2pIh8wutGWQ35pVzE7Pc5cl6yCU&center=40.7412,-73.9896&zoom=18&maptype=satellite">
+                      <!--src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDstWgA2pIh8wutGWQ35pVzE7Pc5cl6yCU
+                        &q=40.74127492558305%2-73.98968545933724">-->
+
+                      <!--src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDstWgA2pIh8wutGWQ35pVzE7Pc5cl6yCU
+                        &q=Space+Needle,Seattle+WA
+                        &center=40.74127492558305, -73.98968545933724">-->
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+    &q=Space+Needle,Seattle+WA">
+</iframe>
+{% endblock %}
