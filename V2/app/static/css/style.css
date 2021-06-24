@@ -127,10 +127,13 @@ p.copyright {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/home2.jpg) no-repeat center center;
+    background: url(../img/citybackground.jpg) no-repeat center center #ececec;
     background-size: cover;
     height: 100%;
 }
+
+
+
 
 .intro-message {
     position: relative;
