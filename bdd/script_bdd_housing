@@ -1,3 +1,19 @@
+﻿
+-- Database: housing
+
+-- DROP DATABASE housing;
+
+CREATE DATABASE housing
+    WITH 
+    OWNER = user
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'fr_FR.UTF-8'
+    LC_CTYPE = 'fr_FR.UTF-8'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+
 -- Table: csv_housing
 
 -- DROP TABLE public.csv_housing;
@@ -23,4 +39,4 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE public.csv_housing
-    OWNER to lukas;
+    OWNER to user;
