@@ -12,7 +12,7 @@ from flask_googlemaps import GoogleMaps
 # En somme on initialise l'application Flask
 app = Flask( __name__ )
 
-GoogleMaps(app)
+GoogleMaps(app, key="AIzaSyDIhNLfbYdsqWlvlCenVPU-qoaAIua11c4")
 
 # Prise en charge des requêtes
 from app import views
