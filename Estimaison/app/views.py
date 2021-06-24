@@ -12,6 +12,9 @@ from geopy.geocoders import Nominatim
 from flask_googlemaps import get_address, get_coordinates
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
+import time
+
+API_KEY = "AIzaSyDIhNLfbYdsqWlvlCenVPU-qoaAIua11c4"
 
 
 @app.route('/')
@@ -41,10 +44,8 @@ def predict():
     rooms = request.form['rooms']
     bedrooms = request.form['bedrooms']
 
-    address = address.replace(" ","+")
-
-    location=get_coordinates("AIzaSyBZih3CFXxvRf_bGZ614lUa9cu5bqy6xkc",address.replace(" ","+"))
-
+    location=get_coordinates(API_KEY,"499 Avenue Janvier Passero Mandelieu France")
+    time.sleep(1)
     # model : ["ll", 'longitude', 'latitude', 'rooms_per_household', 'bedrooms_per_household', "median_income"]
 
     model = load('app/static/model.joblib')
