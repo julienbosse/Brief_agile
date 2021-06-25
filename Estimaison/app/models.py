@@ -13,9 +13,8 @@ def graphique():
 
     data = pd.read_sql_query("SELECT * FROM csv_housing",housing)
 
-    plt.figure(figsize=[7,6])
+    plt.figure(figsize=[4,3])
 
-    plt.subplot(221)
     sns.set_style("dark")
     sns.set_context("paper")
 
@@ -27,6 +26,20 @@ def graphique():
     plt.ylabel("latitude")
     plt.legend("population")
 
-    plt.savefig("app/static/img/dashboard.png")
+    plt.savefig("app/static/img/fig_carte.png")
+    plt.close()
+
+
+    plt.figure(figsize=[4,3])
+
+    sns.set_style("dark")
+    sns.set_context("paper")
+
+    plt.hist(data["median_income"])
+    plt.title("Revenu médian des blocs en Californie")
+    plt.xlabel("Tranches de revenus")
+
+    plt.savefig("app/static/img/fig_income.png")
+    plt.close()
     
     return None
