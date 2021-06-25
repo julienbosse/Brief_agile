@@ -75,7 +75,7 @@ a.navbar-brand.topnav {
 }*/
 
 footer {
-    padding: 50px 0;
+    /*padding: 50px 0;*/
     background-color: #f8f8f8;
 }
 
@@ -112,7 +112,7 @@ p.copyright {
     left: 0;
     width: 100%;
 }
-
+/*
 .btn {
   box-sizing: border-box;
   appearance: none;
@@ -155,7 +155,7 @@ p.copyright {
 .btn.third{
     display: inline-block;
 }
-
+*/
 .center {
     margin: auto;
     width: 50%;
@@ -299,7 +299,7 @@ p.copyright {
     left: 0;
     width: 100%;
 }
-
+/*
 .btn {
   box-sizing: border-box;
   appearance: none;

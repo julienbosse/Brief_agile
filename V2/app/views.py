@@ -41,3 +41,9 @@ def predict():
         prediction=prediction,
         longitude=location.longitude,
         latitude=location.latitude)
+
+
+@app.route('/dashboard', methods=['GET', 'POST'])
+def dashboard():
+    date = datetime.datetime.now().strftime("%x %X")
+    return render_template('dashboard.html', date=date)
