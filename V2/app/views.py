@@ -19,13 +19,6 @@ def form_predict():
     return render_template('form_predict.html', date=date)
 
 
-@app.route('/dashboard')
-def dashboard():
-    models.graphique()
-    date = datetime.datetime.now().strftime("%x %X")
-    return render_template( 'dashboard.html', date=date)
-
-
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     address = request.form['address']
@@ -53,5 +46,6 @@ def predict():
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
+    models.graphique()
     date = datetime.datetime.now().strftime("%x %X")
     return render_template('dashboard.html', date=date)
