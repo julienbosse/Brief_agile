@@ -1,7 +1,10 @@
 /* app/static/css/style.css */
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100')
+=======
+>>>>>>> main
 
 body, html {
     width: 100%;
@@ -14,11 +17,19 @@ h1{
     font-family: 'Spectral', serif;
 }
 
+<<<<<<< HEAD
+=======
+h1{
+    font-family: 'Spectral', serif;
+}
+
+>>>>>>> main
 body, h2, h3 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 li{display:inline-block;min-width:50px;}
 li a {
     text-decoration:none;
@@ -44,6 +55,8 @@ li a:hover:after {
   background: white;
 }
 
+=======
+>>>>>>> main
 .bg-light{
     background-color:#0f056b!important;
     transition: opacity: 0.42;
@@ -66,7 +79,11 @@ li a:hover:after {
     color:white;
 }
 
+<<<<<<< HEAD
 .navbar-light .navbar-nav .nav-link{
+=======
+.navbar-light .navbar-nav .active>.nav-link{
+>>>>>>> main
     color:white;
 }
 
@@ -89,6 +106,7 @@ a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:h
 a.navbar-brand.topnav {
     font-size: 22px;
 }
+<<<<<<< HEAD
 
 .lead {
     font-size: 27px;
@@ -99,6 +117,21 @@ a.navbar-brand.topnav {
     height: 50px;
 }
 
+=======
+/*
+.navbar-light .navbar-brand{
+    color: #007bff;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+    color: #007bff;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #007bff;
+}*/
+
+>>>>>>> main
 footer {
     /*padding: 50px 0;*/
     background-color: #f8f8f8;
@@ -142,7 +175,54 @@ p.copyright {
     left: 0;
     width: 100%;
 }
+<<<<<<< HEAD
 
+=======
+/*
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: #34495E;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+}
+
+.btn:hover, .btn:focus{
+    color: #fff;
+    outline: 0;
+}
+
+.third {
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  transition: all 150ms ease-in-out;
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  }
+
+.btn.third{
+    display: inline-block;
+}
+*/
+>>>>>>> main
 .center {
     margin: auto;
     width: 50%;
@@ -164,6 +244,7 @@ p.copyright {
     border-top: 3px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
+<<<<<<< HEAD
 
 .topnav {
     font-size: 14px;
@@ -198,6 +279,27 @@ p.copyright {
 }
 
 .wrapper-text-home{
+=======
+/*
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/citybackground.jpg");
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 70%, #161616 100%), url("../img/citybackground.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 100%;
+}
+
+*/
+
+/*
+.intro-message {
+>>>>>>> main
     position: relative;
     padding-bottom: 50px;
     height: 100%;
@@ -228,6 +330,109 @@ p.copyright {
 .jumbotron.pt-6{
     height: 580px;
 }
+<<<<<<< HEAD
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+    }
+=======
+*/
+.topnav {
+    font-size: 14px;
+>>>>>>> main
+}
+
+
+.estimer-button {
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    bottom: 125px;
+    left: 0;
+    width: 100%;
+}
+
+<<<<<<< HEAD
+
+/****************************/
+
+.box {
+  display: block;
+  background-color: transparent;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+=======
+.section-1{
+    margin-top:60px;
+    margin-bottom:150px;
+>>>>>>> main
+}
+
+.box:hover {
+  width: 200px;
+  height: 200px;
+  transform: rotate(180deg);
+}
+
+<<<<<<< HEAD
+/****************** body home *****************/
+
+.logo-argent svg, .logo-graphique svg, .logo-team svg {
+    color: #0f056b;
+    opacity: 0.8
+}
+
+.logo-team svg {
+    position: relative;
+    top: 20px;
+=======
+.block-text{
+    margin:10px;
+}
+
+
+/*************** ajout header *********************/
+
+
+
+
+
+.collapse.navbar-collapse{
+    margin-right: 25px;
+}
+
+.wrapper-text-home{
+    position: relative;
+    padding-bottom: 50px;
+    height: 100%;
+}
+
+.content-text{
+    text-align: center;
+    position: relative;
+    bottom: -150px;
+}
+
+.jumbotron {
+    /*position: relative;
+    background:none;*/
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/citybackground.jpg");
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 70%, #161616 100%), url("../img/citybackground.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 100%;
+}
+
+.jumbotron.pt-6{
+    height: 580px;
+}
 
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-nav .nav-link {
@@ -245,7 +450,49 @@ p.copyright {
     left: 0;
     width: 100%;
 }
+/*
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: #34495E;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 
+}
+
+.btn:hover, .btn:focus{
+    color: #fff;
+    outline: 0;
+}
+
+.third {
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  transition: all 150ms ease-in-out;
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  }
+
+.btn.third{
+    display: inline-block;
+}
 
 /****************************/
 
@@ -259,16 +506,5 @@ p.copyright {
   width: 200px;
   height: 200px;
   transform: rotate(180deg);
-}
-
-/****************** body home *****************/
-
-.logo-argent svg, .logo-graphique svg, .logo-team svg {
-    color: #0f056b;
-    opacity: 0.8
-}
-
-.logo-team svg {
-    position: relative;
-    top: 20px;
+>>>>>>> main
 }
