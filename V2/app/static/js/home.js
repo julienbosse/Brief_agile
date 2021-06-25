@@ -18,7 +18,6 @@ $(window).scroll(function() {
     }
 }); //missing );
 
-<<<<<<< HEAD
 /***********************/
 
 
@@ -99,7 +98,5 @@ const next = () => {
 }
 
 next()
-=======
->>>>>>> main
 // document ready
 });
