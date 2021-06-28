@@ -7,6 +7,9 @@ from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 import sklearn
 import time
+from app import models
+import json
+import http.client, urllib.parse
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -24,36 +27,45 @@ def form_predict():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     address = request.form['address']
-    income = request.form['income']/10
+    income = float(request.form['income'])/10
     rooms = request.form['rooms']
     bedrooms = request.form['bedrooms']
 
-    geolocator = Nominatim(user_agent="Estimaison")
+    conn = http.client.HTTPConnection('api.positionstack.com')
+
+    params = urllib.parse.urlencode({
+        'access_key': 'ebdb53cd8ffbdf290d81f2babdc46a25',
+        'query': address,
+        'limit': 1,
+        })
+
+    conn.request('GET', '/v1/forward?{}'.format(params))
+
+    res = conn.getresponse()
+
+    data = res.read().decode('utf-8')
+
+    location = json.loads(data)
+
+    latitude = float(location["data"][0]["latitude"])
+    longitude = float(location["data"][0]["longitude"])
+
+    #geolocator = Nominatim(user_agent="Estimaison")
     # location = geolocator.geocode(address)
-
-    # print(location)
-
-    try:
-        location = geolocator.geocode(address)
-        print(location)
-        print(location.latitude, location.longitude)
-    except GeocoderTimedOut as e:
-        print("Error: geocode failed on input %s with message %s" % (address, e.message))
 
     # model : ["ll", 'longitude', 'latitude', 'rooms_per_household', 'bedrooms_per_household', "median_income"]
 
-    model = load('app/static/modeles/model.joblib')
-    print(model)
-    # prediction = model.predict([[location.longitude*location.latitude, location.longitude, location.latitude, rooms, bedrooms, income]])[0]
+    model = load('app/static/model.joblib')
+    prediction = model.predict([[longitude*latitude, longitude, latitude, rooms, bedrooms, income]])[0]
 
     date = datetime.datetime.now().strftime("%x %X")
     return render_template(
         'predict.html',
-        #date=date,
-        #address=address,
-        #prediction=prediction,
-        longitude=location.longitude,
-        latitude=location.latitude)
+        date=date,
+        address=address,
+        prediction=prediction,
+        longitude=longitude,
+        latitude=latitude)
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
