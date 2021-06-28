@@ -32,7 +32,6 @@ def predict():
     bedrooms = request.form['bedrooms']
 
     conn = http.client.HTTPConnection('api.positionstack.com')
-
     params = urllib.parse.urlencode({
         'access_key': 'ebdb53cd8ffbdf290d81f2babdc46a25',
         'query': address,
@@ -40,35 +39,23 @@ def predict():
         })
 
     conn.request('GET', '/v1/forward?{}'.format(params))
-
     res = conn.getresponse()
-
     data = res.read().decode('utf-8')
-
     location = json.loads(data)
-
     latitude = float(location["data"][0]["latitude"])
     longitude = float(location["data"][0]["longitude"])
 
-    #geolocator = Nominatim(user_agent="Estimaison")
-    # location = geolocator.geocode(address)
-
-    # model : ["ll", 'longitude', 'latitude', 'rooms_per_household', 'bedrooms_per_household', "median_income"]
+    # model : ["longitude*latitude", 'longitude', 'latitude', 'rooms_per_household', 'bedrooms_per_household', "median_income"]
 
     model = load('app/static/model.joblib')
     prediction = model.predict([[longitude*latitude, longitude, latitude, rooms, bedrooms, income]])[0]
 
-    source = "https://www.google.com/maps/embed/v1/view?key=AIzaSyDstWgA2pIh8wutGWQ35pVzE7Pc5cl6yCU&center="+str(longitude)+","+str(latitude)+"&zoom=18&maptype=roadmap"
-
-    date = datetime.datetime.now().strftime("%x %X")
     return render_template(
         'predict.html',
-        date=date,
         address=address,
         prediction=prediction,
         longitude=longitude,
-        latitude=latitude,
-        source=source)
+        latitude=latitude)
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
