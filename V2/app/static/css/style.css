@@ -527,3 +527,12 @@ p.copyright {
 .button.button--ujarak.button--border-thin.button--text-thick a{
     color: inherit;
 }
+
+.box-graphs {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width:80%;
+    align-content: space-between;
+    text-align: center;
+  }
