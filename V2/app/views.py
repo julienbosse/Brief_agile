@@ -22,7 +22,7 @@ def form_predict():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     address = request.form['address']
-    income = request.form['income']
+    income = request.form['income']/10
     rooms = request.form['rooms']
     bedrooms = request.form['bedrooms']
 
