@@ -58,6 +58,8 @@ def predict():
     model = load('app/static/model.joblib')
     prediction = model.predict([[longitude*latitude, longitude, latitude, rooms, bedrooms, income]])[0]
 
+    source = "https://www.google.com/maps/embed/v1/view?key=AIzaSyDstWgA2pIh8wutGWQ35pVzE7Pc5cl6yCU&center="+str(longitude)+","+str(latitude)+"&zoom=18&maptype=roadmap"
+
     date = datetime.datetime.now().strftime("%x %X")
     return render_template(
         'predict.html',
@@ -65,7 +67,8 @@ def predict():
         address=address,
         prediction=prediction,
         longitude=longitude,
-        latitude=latitude)
+        latitude=latitude,
+        source=source)
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
