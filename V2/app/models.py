@@ -39,7 +39,7 @@ def graphique():
 
     plt.hist(data["median_income"])
     plt.title("Revenu médian des blocs en Californie")
-    plt.xlabel("Tranches de revenus")
+    plt.xlabel("Tranches de revenus en k$")
 
     plt.savefig("app/static/img/fig_income.png")
     plt.close()
