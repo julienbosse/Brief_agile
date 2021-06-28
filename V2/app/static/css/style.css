@@ -1,22 +1,20 @@
 /* app/static/css/style.css */
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100')
 
 body, html {
     width: 100%;
     height: 100%;
 }
-
 .h1, h1{
     font-size: 65px;
 }
-
 h1{
     font-family: 'Spectral', serif;
 }
 
-body, h2, h3 {
+body, h2, h3, p {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
 }
@@ -48,7 +46,7 @@ li a:hover:after {
 
 .bg-light{
     background-color:#0f056b!important;
-    transition: opacity 0.42;
+    transition: opacity: 0.42;
 }
 
 .navbar.scrolled {
@@ -152,7 +150,7 @@ p.copyright {
 
 .content-section {
     padding: 50px 0;
-    border-top: 1px solid #e7e7e7;
+   /* border-top: 1px solid #e7e7e7; */
 }
 
 .footer, .push {
@@ -178,9 +176,17 @@ p.copyright {
 }
 
 .section-1{
-    margin-top:60px;
+    margin-top:35px;
     height: 450px;
     margin-bottom:250px;
+}
+
+.section-1 p {
+    font-size: 18px;
+}
+
+.section-1 .block-text {
+    height: 200px;
 }
 
 .wrapper-logo{
@@ -376,7 +382,7 @@ p.copyright {
 	min-width: 150px;
 	max-width: 250px;
 	display: block;
-	margin: 1em;
+	/*margin: 1em;*/
 	padding: 1em 2em;
 	border: none;
 	background: none;
@@ -387,6 +393,11 @@ p.copyright {
 	-webkit-backface-visibility: hidden;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+.section-3 form button {
+    margin-top: 15px;
+}
+
 .button:focus {
 	outline: none;
 }
@@ -530,11 +541,26 @@ p.copyright {
     color: inherit;
 }
 
-.box-graphs {
-    display: flex;
-    flex-wrap: wrap;
-    height: 400px;
-    width:80%;
-    align-content: space-between;
+.button.button--ujarak.button--border-thin.button--text-thick a:hover {
+    text-decoration: none;
+}
+
+/********** form predict *******************/
+
+.img-content {
+    position: absolute;
     text-align: center;
-  }
+}
+
+.img-content img {
+    position: relative;
+    left: -100px;
+    top: 115px;
+}
+
+
+
+
+.intro-message{
+    text-align: center;
+}
