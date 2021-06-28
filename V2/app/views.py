@@ -4,6 +4,7 @@ import datetime
 from joblib import load
 from geopy.geocoders import Nominatim
 import time
+from app import models
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -45,5 +46,6 @@ def predict():
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
+    models.graphique()
     date = datetime.datetime.now().strftime("%x %X")
     return render_template('dashboard.html', date=date)

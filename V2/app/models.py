@@ -55,5 +55,18 @@ def graphique():
 
     plt.savefig("app/static/img/fig_price.png")
     plt.close()
+
+    plt.figure(figsize=[5,4])
+
+    sns.set_style("dark")
+    sns.set_context("paper")
+
+    sns.countplot(x=data["ocean_proximity"],data=data["ocean_proximity"])
+    plt.title("Proximité à l'océan")
+    plt.xlabel("Catérgories ocean_proximity")
+    plt.ylabel("Nombre de blocs")
+
+    plt.savefig("app/static/img/fig_oceanproximity.png")
+    plt.close()
     
     return None
