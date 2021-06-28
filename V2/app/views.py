@@ -3,8 +3,10 @@ from app import app
 import datetime
 from joblib import load
 from geopy.geocoders import Nominatim
+from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut
+import sklearn
 import time
-from app import models
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -27,25 +29,40 @@ def predict():
     bedrooms = request.form['bedrooms']
 
     geolocator = Nominatim(user_agent="Estimaison")
-    location = geolocator.geocode(address)
+    # location = geolocator.geocode(address)
+
+    # print(location)
+
+    try:
+        location = geolocator.geocode(address)
+        print(location)
+        print(location.latitude, location.longitude)
+    except GeocoderTimedOut as e:
+        print("Error: geocode failed on input %s with message %s" % (address, e.message))
 
     # model : ["ll", 'longitude', 'latitude', 'rooms_per_household', 'bedrooms_per_household', "median_income"]
 
-    model = load('app/static/model.joblib')
-    prediction = model.predict([[location.longitude*location.latitude, location.longitude, location.latitude, rooms, bedrooms, income]])[0]
+    model = load('app/static/modeles/model.joblib')
+    print(model)
+    # prediction = model.predict([[location.longitude*location.latitude, location.longitude, location.latitude, rooms, bedrooms, income]])[0]
 
     date = datetime.datetime.now().strftime("%x %X")
     return render_template(
         'predict.html',
-        date=date,
-        address=address,
-        prediction=prediction,
+        #date=date,
+        #address=address,
+        #prediction=prediction,
         longitude=location.longitude,
         latitude=location.latitude)
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    models.graphique()
     date = datetime.datetime.now().strftime("%x %X")
     return render_template('dashboard.html', date=date)
+
+
+@app.route('/team', methods=['GET', 'POST'])
+def team():
+    date = datetime.datetime.now().strftime("%x %X")
+    return render_template('team.html', date=date)
