@@ -1,3 +1,9 @@
+# coding: utf8
+import pandas as pd
+from sqlalchemy import create_engine
+import matplotlib.pyplot as plt
+import seaborn as sns
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
