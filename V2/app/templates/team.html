@@ -1,17 +1,18 @@
 {% import "bootstrap/utils.html" as utils %}
 {% extends "base.html" %}
-{% block title %}Login{% endblock %}
+{% block title %}Team{% endblock %}
 {% block body %}
 <div class="container">
     <div class="row text-center justify-content-center">
         <div class="col-md-11">
-            <h1 class="mb-4">Small team. <mark data-aos="highlight-text" data-aos-delay="200" class="aos-init aos-animate">Big hearts.</mark></h1>
+            <h1 class="mb-4">Small team. <mark data-aos="highlight-text" data-aos-delay="200" class="aos-init aos-animate">Big talents.</mark></h1>
             <div class="form-row">
                 <div class="col-4">
-                    <img src="https://via.placeholder.com/387x470/FF0000/000000" class="img-fluid rounded shadow-lg transition-hover" alt="trello">
+                    <img src="{{url_for('static', filename='img/team.png')}}" class="img-fluid rounded shadow-lg transition-hover" alt="trello">
+                    <img src="{{url_for('static', filename='img/kraken.png')}}" class="img-fluid rounded shadow-lg mt-2 transition-hover" alt="...">
                 </div>
                 <div class="col-3">
-                    <img src="https://via.placeholder.com/470x424/8A2BE2/000000" class="img-fluid rounded shadow-lg mb-2 transition-hover" alt="...">
+                    <img src="{{url_for('static', filename='img/simplon.png')}}" class="img-fluid rounded shadow-lg mb-2 transition-hover" alt="...">
                     <img src="{{url_for('static', filename='img/starfish.png')}}" class="img-fluid rounded shadow-lg mt-2 transition-hover" alt="...">
                 </div>
                 <div class="col-5">
